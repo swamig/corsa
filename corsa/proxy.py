@@ -111,6 +111,7 @@ class ProxyHandler(tornado.web.RequestHandler):
             headers=self.request.headers,
             follow_redirects=False,
             allow_nonstandard_methods=True,
+            validate_cert=False, #for ssl dev servers that are using free dev certs
             use_gzip=False, # otherwise tornado will decode proxied data
         )
 
